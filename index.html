@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>企业中控平台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar" aria-label="端分类">
+      <div class="brand">
+        <div class="brand-mark">W</div>
+        <div>
+          <strong>WorkStation</strong>
+          <span>统一工作台</span>
+        </div>
+      </div>
+
+      <div class="side-title">系统端口</div>
+      <nav class="nav-list" id="portalNav" aria-label="系统端口分类"></nav>
+
+      <section class="sidebar-panel" aria-label="当前端概览">
+        <span>当前端应用</span>
+        <strong id="portalAppCount">0</strong>
+        <p id="portalDescription">按业务端集中放置系统入口</p>
+      </section>
+    </aside>
+
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">企业应用入口</p>
+          <h1 id="pageTitle">中控平台</h1>
+        </div>
+        <div class="user-pill" aria-label="当前用户">
+          <span class="avatar" id="userAvatar">访</span>
+          <span id="currentUserName">未登录</span>
+        </div>
+      </header>
+
+      <section class="summary-grid" aria-label="关键状态">
+        <article class="metric-card">
+          <span>已接入应用</span>
+          <strong id="totalApps">0</strong>
+        </article>
+        <article class="metric-card">
+          <span>当前端应用</span>
+          <strong id="currentPortalApps">0</strong>
+        </article>
+        <article class="metric-card">
+          <span>端口数量</span>
+          <strong id="portalCount">0</strong>
+        </article>
+        <article class="metric-card">
+          <span>数据状态</span>
+          <strong>本地保存</strong>
+        </article>
+      </section>
+
+      <section class="toolbar" aria-label="应用筛选">
+        <label class="search-box">
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="搜索应用名称或 URL" />
+        </label>
+      </section>
+
+      <section class="section-heading">
+        <div>
+          <h2 id="sectionTitle">全部系统</h2>
+          <p>点击左侧端口旁的加号添加系统，点击应用卡片跳转</p>
+        </div>
+        <button class="primary-action" type="button" id="addCurrentApp">新增应用</button>
+      </section>
+
+      <section class="app-grid" id="appGrid" aria-live="polite"></section>
+    </main>
+
+    <dialog class="app-dialog" id="appDialog">
+      <form method="dialog" class="app-form" id="appForm">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">新增应用</p>
+            <h2 id="dialogTitle">添加到运营端</h2>
+          </div>
+          <button class="icon-button" type="button" id="closeDialog" aria-label="关闭">×</button>
+        </div>
+
+        <label class="form-field">
+          <span>应用名称</span>
+          <input id="appNameInput" type="text" placeholder="例如：采购申请系统" required />
+        </label>
+
+        <label class="form-field">
+          <span>跳转 URL</span>
+          <input id="appUrlInput" type="url" placeholder="https://example.com" required />
+        </label>
+
+        <div class="form-actions">
+          <button class="secondary-action" type="button" id="cancelDialog">取消</button>
+          <button class="primary-action" type="submit">保存应用</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
