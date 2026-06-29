@@ -1,0 +1,13 @@
+services:
+  workstation:
+    build: .
+    container_name: workstation
+    restart: unless-stopped
+    ports:
+      - "8030:8030"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      PORT: "8030"
+      AUTO_OPEN_BROWSER: "0"
