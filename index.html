@@ -53,21 +53,21 @@
         </article>
         <article class="metric-card">
           <span>数据状态</span>
-          <strong>本地保存</strong>
+          <strong>数据库保存</strong>
         </article>
       </section>
 
       <section class="toolbar" aria-label="应用筛选">
         <label class="search-box">
           <span>搜索</span>
-          <input id="searchInput" type="search" placeholder="搜索应用名称或 URL" />
+          <input id="searchInput" type="search" placeholder="搜索应用名称或接口 URL" />
         </label>
       </section>
 
       <section class="section-heading">
         <div>
           <h2 id="sectionTitle">全部系统</h2>
-          <p>点击左侧端口旁的加号添加系统，点击应用卡片跳转</p>
+          <p>点击应用后，页面会把当前用户信息发送给对应系统后端接口</p>
         </div>
         <button class="primary-action" type="button" id="addCurrentApp">新增应用</button>
       </section>
@@ -79,7 +79,7 @@
       <form method="dialog" class="app-form" id="appForm">
         <div class="dialog-heading">
           <div>
-            <p class="eyebrow">新增应用</p>
+            <p class="eyebrow" id="dialogEyebrow">新增应用</p>
             <h2 id="dialogTitle">添加到运营端</h2>
           </div>
           <button class="icon-button" type="button" id="closeDialog" aria-label="关闭">×</button>
@@ -87,17 +87,17 @@
 
         <label class="form-field">
           <span>应用名称</span>
-          <input id="appNameInput" type="text" placeholder="例如：采购申请系统" required />
+          <input id="appNameInput" type="text" placeholder="例如：运营打样申请与验收" required />
         </label>
 
         <label class="form-field">
-          <span>跳转 URL</span>
-          <input id="appUrlInput" type="url" placeholder="https://example.com" required />
+          <span>后端接口 URL</span>
+          <input id="appUrlInput" type="url" placeholder="https://system.example.com/api/workstation-login" required />
         </label>
 
         <div class="form-actions">
           <button class="secondary-action" type="button" id="cancelDialog">取消</button>
-          <button class="primary-action" type="submit">保存应用</button>
+          <button class="primary-action" type="submit" id="saveAppButton">保存应用</button>
         </div>
       </form>
     </dialog>
